@@ -2,7 +2,7 @@
 
 > AI/ML Engineer building production-grade AI systems, computer vision pipelines, and edge-deployed mobile intelligence.
 
-**[View Live Site →](https://rocknraushan.github.io/portfolio)**
+**[View Live Site →](https://rocknraushan.github.io)**
 
 ---
 

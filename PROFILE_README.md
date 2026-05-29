@@ -6,7 +6,7 @@
 
 *Building production-grade AI systems — agentic workflows, computer vision pipelines, and edge-deployed mobile intelligence.*
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-rocknraushan.github.io-black?style=flat-square&logo=googlechrome&logoColor=white)](https://rocknraushan.github.io/portfolio)
+[![Portfolio](https://img.shields.io/badge/Portfolio-rocknraushan.github.io-black?style=flat-square&logo=googlechrome&logoColor=white)](https://rocknraushan.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-raushan--pandey-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/raushan-pandey-583182240)
 [![Email](https://img.shields.io/badge/Email-raushan.rkp1%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:raushan.rkp1@gmail.com)
 
