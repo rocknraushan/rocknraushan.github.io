@@ -115,30 +115,45 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => navObserver.observe(section));
 
     // ─── Contact form ───
+    const EMAILJS_SERVICE_ID  = 'service_euly54l';
+    const EMAILJS_TEMPLATE_ID = 'template_o46k08v';
+    const EMAILJS_PUBLIC_KEY  = 'pbpC0iJIDvQn1-14a';
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector('.form-submit');
             const originalHTML = btn.innerHTML;
-            
+
             btn.innerHTML = '<span>Sending...</span>';
             btn.disabled = true;
             btn.style.opacity = '0.7';
 
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                btn.innerHTML = '<span>✓ Message Sent!</span>';
-                btn.style.background = '#16a34a';
-
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.disabled = false;
-                    btn.style.opacity = '1';
-                    btn.style.background = '';
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+                .then(() => {
+                    btn.innerHTML = '<span>✓ Message Sent!</span>';
+                    btn.style.background = '#16a34a';
                     contactForm.reset();
-                }, 2500);
-            }, 1500);
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.disabled = false;
+                        btn.style.opacity = '1';
+                        btn.style.background = '';
+                    }, 2500);
+                })
+                .catch(() => {
+                    btn.innerHTML = '<span>✗ Failed — try email directly</span>';
+                    btn.style.background = '#dc2626';
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.disabled = false;
+                        btn.style.opacity = '1';
+                        btn.style.background = '';
+                    }, 3000);
+                });
         });
     }
 
